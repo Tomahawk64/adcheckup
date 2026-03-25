@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import ServiceCard from '@/components/ServiceCard';
+import PaymentButton from '@/components/PaymentButton';
 
 export const metadata = {
   title: 'AdCheckup — Digital Growth Solutions for U.S. Businesses',
@@ -291,7 +292,168 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      {/* ── Pricing ────────────────────────────────────────────────────── */}
+      <section className="section-padding bg-white" aria-labelledby="pricing-heading">
+        <div className="container-max">
+          <div className="text-center mb-12">
+            <p className="text-emerald-500 font-semibold text-sm uppercase tracking-widest mb-3">
+              Simple, Transparent Pricing
+            </p>
+            <h2 id="pricing-heading" className="section-title">
+              Choose the Plan That Fits Your Goals
+            </h2>
+            <p className="section-subtitle mx-auto text-center">
+              No hidden fees. No long-term lock-ins. Scale up or down any time.
+            </p>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+            {/* Starter */}
+            <div className="card flex flex-col">
+              <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-2">
+                Starter
+              </p>
+              <div className="flex items-end gap-1 mb-1">
+                <span className="text-4xl font-extrabold text-gray-900">₹500</span>
+                <span className="text-gray-400 mb-1">/mo</span>
+              </div>
+              <p className="text-gray-500 text-sm mb-6">
+                Perfect for small businesses just getting started online.
+              </p>
+              <ul className="space-y-3 mb-8 flex-1">
+                {['SEO Audit Report', 'Google Ads Setup', '5 Keywords Tracked', 'Monthly Report'].map(
+                  (feat) => (
+                    <li key={feat} className="flex items-center gap-2 text-sm text-gray-600">
+                      <svg
+                        className="w-4 h-4 text-emerald-500 flex-shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2.5}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      {feat}
+                    </li>
+                  ),
+                )}
+              </ul>
+              <PaymentButton
+                amount={50000}
+                description="Starter Plan — ₹500/mo"
+                buttonLabel="Get Started"
+                buttonClassName="inline-flex items-center justify-center gap-2 w-full bg-white text-emerald-600 font-semibold px-6 py-3 rounded-xl border-2 border-emerald-500 hover:bg-emerald-50 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
+              />
+            </div>
+
+            {/* Growth — highlighted */}
+            <div className="relative card flex flex-col border-emerald-400 shadow-lg">
+              <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs font-bold px-4 py-1 rounded-full tracking-wide">
+                Most Popular
+              </span>
+              <p className="text-sm font-semibold text-emerald-500 uppercase tracking-widest mb-2">
+                Growth
+              </p>
+              <div className="flex items-end gap-1 mb-1">
+                <span className="text-4xl font-extrabold text-gray-900">₹1,500</span>
+                <span className="text-gray-400 mb-1">/mo</span>
+              </div>
+              <p className="text-gray-500 text-sm mb-6">
+                Ideal for growing businesses that need more reach and reporting.
+              </p>
+              <ul className="space-y-3 mb-8 flex-1">
+                {[
+                  'Everything in Starter',
+                  'PPC Campaign Management',
+                  '20 Keywords Tracked',
+                  'Social Media (2 platforms)',
+                  'Bi-weekly Reports',
+                ].map((feat) => (
+                  <li key={feat} className="flex items-center gap-2 text-sm text-gray-600">
+                    <svg
+                      className="w-4 h-4 text-emerald-500 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    {feat}
+                  </li>
+                ))}
+              </ul>
+              <PaymentButton
+                amount={150000}
+                description="Growth Plan — ₹1,500/mo"
+                buttonLabel="Pay Now"
+              />
+            </div>
+
+            {/* Enterprise */}
+            <div className="card flex flex-col">
+              <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-2">
+                Enterprise
+              </p>
+              <div className="flex items-end gap-1 mb-1">
+                <span className="text-4xl font-extrabold text-gray-900">₹4,000</span>
+                <span className="text-gray-400 mb-1">/mo</span>
+              </div>
+              <p className="text-gray-500 text-sm mb-6">
+                Full-service digital marketing for high-growth companies.
+              </p>
+              <ul className="space-y-3 mb-8 flex-1">
+                {[
+                  'Everything in Growth',
+                  'Dedicated Account Manager',
+                  '50+ Keywords Tracked',
+                  'CRO & A/B Testing',
+                  'Custom Analytics Dashboard',
+                  'Priority Support',
+                ].map((feat) => (
+                  <li key={feat} className="flex items-center gap-2 text-sm text-gray-600">
+                    <svg
+                      className="w-4 h-4 text-emerald-500 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    {feat}
+                  </li>
+                ))}
+              </ul>
+              <PaymentButton
+                amount={400000}
+                description="Enterprise Plan — ₹4,000/mo"
+                buttonLabel="Get Started"
+                buttonClassName="inline-flex items-center justify-center gap-2 w-full bg-white text-emerald-600 font-semibold px-6 py-3 rounded-xl border-2 border-emerald-500 hover:bg-emerald-50 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
+              />
+            </div>
+          </div>
+
+          <p className="text-center text-xs text-gray-400 mt-8">
+            Payments are processed securely via Razorpay. Test mode active — no real charges apply.
+          </p>
+        </div>
+      </section>
       {/* ── Final CTA ──────────────────────────────────────────────── */}
       <section
         className="section-padding bg-gradient-to-r from-emerald-600 to-emerald-500 text-white"
