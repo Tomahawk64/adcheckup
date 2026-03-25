@@ -81,12 +81,13 @@ export default function PaymentButton({
       // without a backend. Do NOT omit order_id in production.
       handler(response) {
         // Success callback
+        const paymentId = response.razorpay_payment_id;
         console.log('Payment successful:', {
-          payment_id: response.razorpay_payment_id,
-          // razorpay_signature is only returned when an order_id is used
+          payment_id: paymentId,
           signature: response.razorpay_signature ?? 'N/A (no order_id in test mode)',
         });
-        alert(`Payment Successful!\nPayment ID: ${response.razorpay_payment_id}`);
+        setLoading(false);
+        alert(`Payment Successful!\nPayment ID: ${paymentId}`);
       },
       prefill: {
         name: prefillName,

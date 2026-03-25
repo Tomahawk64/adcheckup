@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',          // Generates /out folder — no Node server required
-  trailingSlash: true,       // /services → /services/index.html (Render-compatible)
+  // Deployed as a Node.js Web Service on Render — API routes require a server
+  trailingSlash: true,
   images: {
-    unoptimized: true,       // Static export cannot use built-in image optimisation server
+    unoptimized: true,
   },
   poweredByHeader: false,
   turbopack: {

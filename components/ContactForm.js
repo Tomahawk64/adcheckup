@@ -63,6 +63,14 @@ export default function ContactForm() {
 
     try {
       await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY);
+
+      // Save submission to MongoDB (fire-and-forget — doesn't affect UX on failure)
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(fields),
+      }).catch((err) => console.error('Failed to save contact to DB:', err));
+
       setStatus('success');
       setFields({ from_name: '', from_email: '', message: '' });
       setTouched({});
