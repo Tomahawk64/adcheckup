@@ -13,7 +13,7 @@ import { useState } from 'react';
 
 // Replace with your actual Razorpay Test Key ID (starts with rzp_test_)
 // The Secret Key must NEVER appear here — only the Key ID is safe for the browser.
-const RAZORPAY_KEY_ID = 'rzp_test_YOUR_KEY_ID_HERE';
+const RAZORPAY_KEY_ID = 'rzp_test_SVVU9qRyec0rdR';
 
 /** Dynamically injects the Razorpay checkout script only when needed. */
 function loadRazorpayScript() {
