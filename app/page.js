@@ -168,7 +168,7 @@ export default function HomePage() {
               <Link href="/contact" className="btn-primary text-base px-8 py-3.5">
                 Get in Touch
               </Link>
-              <Link href="/services" className="btn-secondary text-base px-8 py-3.5 border-gray-600 text-gray-200 hover:bg-white/5 hover:border-gray-400">
+              <Link href="/services" className="btn-ghost text-base px-8 py-3.5">
                 Explore Services
               </Link>
             </div>
